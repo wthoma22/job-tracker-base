@@ -3,9 +3,12 @@
 This repository will be used as starter code for various assignments at Turing.
 
 ```
-git clone git@github.com:turingschool-examples/job-tracker.git
+# fork first!
+git clone git@github.com:<your_username>/job-tracker.git
 cd job-tracker
 bundle install
 bundle exec rake db:setup
 bundle exec rails server
 ```
+
+Submit your solution with a Pull Request.
