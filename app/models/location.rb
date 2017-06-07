@@ -1,5 +1,6 @@
 class Location < ActiveRecord::Base
   validates :city, presence: true
 
-  has_many :companies
+  has_many :company_locations
+  has_many :companies, through: :company_locations
 end
