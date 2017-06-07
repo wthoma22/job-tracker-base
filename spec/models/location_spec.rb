@@ -13,7 +13,7 @@ describe Location do
   describe "relationships" do
     it "belongs to a company" do
       company = Company.new(name: "Dropbox")
-      location = company.location.create!(city: "Denver")
+      location = company.locations.create!(city: "Denver")
       expect(location).to respond_to(:company)
     end
   end
