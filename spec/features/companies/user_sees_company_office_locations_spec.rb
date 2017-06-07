@@ -14,4 +14,19 @@ describe "User sees company office locations" do
     expect(page).to have_content(location_1.city)
     expect(page).to have_content(location_2.city)
   end
+
+  scenario "a user sees a count of how many office locations a company has" do
+    company = Company.create!(name: "ESPN")
+    company.jobs.create!(title: "Developer", level_of_interest: 90, city: "Denver")
+    location_1 = company.locations.create!(city: "Denver")
+    location_2 = company.locations.create!(city: "Boston")
+
+    visit company_path(company)
+
+    expect(current_path).to eq("/companies/#{company.id}/jobs")
+
+    expect(page).to have_content(location_1.city)
+    expect(page).to have_content(location_2.city)
+    expect(page).to have_content("#{location_1.city} - #{location_2.city}")
+  end
 end

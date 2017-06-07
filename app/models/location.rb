@@ -3,4 +3,9 @@ class Location < ActiveRecord::Base
 
   has_many :company_locations
   has_many :companies, through: :company_locations
+
+  def count
+    locations.count
+  end
+  
 end

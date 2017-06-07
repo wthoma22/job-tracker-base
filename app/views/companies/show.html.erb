@@ -1,13 +1,10 @@
-No Jobs <strong><%= @company.name %></strong>
-
-<ul>
-  <% @company.locations.each do |location| %>
-  <li><%= location.city %></li>
-  <% end %>
-</ul>
-
-<br />
+All Jobs for <strong><%= @company.name %></strong>
 
 <% @company.jobs.each do |job| %>
-  <ul><%= job.title %></ul>
+<ul><%= job.title %></ul>
 <% end %>
+<br />
+
+  <% @company.locations.each do |location| %>
+  <ul><%= location.city - location.count %></ul>
+  <% end %>
